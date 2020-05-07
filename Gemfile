@@ -19,11 +19,11 @@ gem 'webpacker'
 # gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', github: 'rails/jbuilder', branch: 'master' #modified after weird 6.0 update error.
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -43,12 +43,17 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'country_state_select'
+
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'better_errors' #Don't use with RSPEC.  Wait, why not?
+  gem 'binding_of_caller' #REPL for better errors.
 end
 
 group :development do
@@ -58,6 +63,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
+  gem 'bullet'
+  gem 'rack-mini-profiler'
 end
 
 group :test do
