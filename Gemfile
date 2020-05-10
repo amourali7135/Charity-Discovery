@@ -44,6 +44,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_state_select'
+gem 'faker'
 
 
 group :development, :test do  gem 'pry-byebug'

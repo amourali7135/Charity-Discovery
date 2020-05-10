@@ -5,7 +5,7 @@
 
 <div class="row align-items-center justify-content-center">
 <%= simple_form_for @charity do |f|%>
-<%= f.input :name %>
+<%= f.input :name, label:  %>
 <%= f.input :biography %>
 <%= f.input :types, collection: Buyer.types, input_html: {multiple: true, id: "buyer_types_new"}, label: "What types of data are you interested in purchasing?" %>
 <%= f.input :intentions, label: "What do you seek to do with the data you are after?", placeholder: "We need this data/survey/information/etc. for our startup/research/business/etc." %>
@@ -15,9 +15,9 @@
 <%= f.input :country, collection: CountryStateSelect.countries_collection.sort, input_html: {id: "buyers_country_new"} %>
 <%= f.input :city, input_html: {id: "buyers_city"} %>
 <%= f.input :phone %>
-<%= f.input :photo %>
+<%#= f.input :photo %>
 <%# <%= f.input :photo, as: :file %>
-<%= f.input :photo_cache, as: :hidden %>
+<%#= f.input :photo_cache, as: :hidden %>
 <div style="text-align:center">
 <%= f.button :submit, 'Submit', class: 'btn btn-primary'%>
 </div>

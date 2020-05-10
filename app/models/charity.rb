@@ -9,5 +9,7 @@ class Charity < ApplicationRecord
   validates :website, uniqueness: true
   validates :country, presence: true
   validates :income, presence: true
+  validates :aged, numericality: true
+  validates :goal, presence: true,
 
 end
