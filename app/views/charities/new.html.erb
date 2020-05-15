@@ -1,20 +1,29 @@
 <div class="container mt-3">
 <div class="row align-items-center justify-content-center">
-<h2>Please provide information about your charity.</h2>
+<h2>Please provide the following information about your charity.</h2>
 </div>
 
 <div class="row align-items-center justify-content-center">
 <%= simple_form_for @charity do |f|%>
-<%= f.input :name, label:  %>
-<%= f.input :biography %>
-<%= f.input :types, collection: Buyer.types, input_html: {multiple: true, id: "buyer_types_new"}, label: "What types of data are you interested in purchasing?" %>
+<%= f.input :name, label: "What is the name of your charity?" %>
+<%= f.input :goal, label: "What is the primary goal of your charity?" %>
+<%= f.input :mission, label: "Do you have a mission statement" %>
+<%= f.input :aged, label: "How many years old is it?" %>
 <%= f.input :intentions, label: "What do you seek to do with the data you are after?", placeholder: "We need this data/survey/information/etc. for our startup/research/business/etc." %>
 <%= f.input :website, label: "Please provide the full URL of your website.", placeholder: "www.yourwebsite.com" %>
 <%= f.input :contact, label: "How can you be contacted?", placeholder: "Email, phone number, etc." %>
 <%= f.input :size, label: "How many people are associated with your data seeking group?" %>
-<%= f.input :country, collection: CountryStateSelect.countries_collection.sort, input_html: {id: "buyers_country_new"} %>
-<%= f.input :city, input_html: {id: "buyers_city"} %>
-<%= f.input :phone %>
+<%= f.input :country, collection: CountryStateSelect.countries_collection.sort, input_html: {id: "buyers_country_new"}, label: "What country is your charity based in?" %>
+<%= f.input :country_focus, label: "What country does your charity focus its work on?", collection: CountryStateSelect.countries_collection.sort, input_html: {id: "buyers_country_new"} %>
+<%= f.input :city, input_html: {id: "buyers_city"}, label: "What city is your charity based in?" %>
+<%= f.input :facebook, label: "Does your charity have a Facebook page?", placeholder: "Put your Facebook URL here." %>
+<%= f.input :instagram, label: "Does your charity have an Instagram page?", placeholder: "Put your Instagram handle name here." %>
+<%= f.input :income, label: "How much does your charity earn per year?" %>
+<%= f.input :program_percentage, label: "What percentage of your total expenses are actually spent on your charitable programs?" %>
+<%= f.input :cost_to_100, label: "How much does your charity spend on fundraising to raise $100?" %>
+<%= f.input :fiveohone, label: "Is your charity recognized in the US as being a 501C3 charitable group?" %>
+<%= f.input :phone, label: "What is your charity's primary phone number?" %>
+<%#= f.input :issues, collection: Buyer.types, input_html: {multiple: true, id: "buyer_types_new"}, label: "What types of data are you interested in purchasing?" %>
 <%#= f.input :photo %>
 <%# <%= f.input :photo, as: :file %>
 <%#= f.input :photo_cache, as: :hidden %>

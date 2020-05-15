@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+  <div class="container">
+   <% if !current_user %>
+      <strong><h1>Welcome to Charity Finder!  The world is in greater need for charity than ever before.</h1></strong>
+      <p>Register to help bring your charity ideas to life to help out others!</p>
+      <%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %>
+      <% elsif current_user %>
+      <strong><h1>Welcome back!  Browse through new charity campaigns or head to your dashboard</h1></strong>
+      <%= link_to "Inquiries", inquiries_path, class: 'btn btn-primary' %>
+      <%= link_to "Dashboard", sellerdashboard_path, class: 'btn btn-primary' %>
+      <% elsif current_user %>
+      <strong><h1>Welcome back!  Post a new inquiry or head to your dashboard</h1></strong>
+      <%= link_to "New Inquiry", new_buyer_inquiry_path(current_user.buyer), class: 'btn btn-primary' %>
+      <%= link_to "Dashboard", buyerdashboard_path, class: 'btn btn-primary' %>
+<% end %>
+  </div>
+</div>
