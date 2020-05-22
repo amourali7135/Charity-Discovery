@@ -1,5 +1,7 @@
 class Campaign < ApplicationRecord
   belongs_to :charity
+  has_one_attached :photo
+
 
 
   validates :title, uniqueness: true

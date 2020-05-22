@@ -45,6 +45,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_state_select'
 gem 'faker'
+gem 'cloudinary'
 
 
 group :development, :test do  gem 'pry-byebug'

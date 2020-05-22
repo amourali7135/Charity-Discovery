@@ -59,7 +59,7 @@ class CampaignsController < ApplicationController
   # end
 
   def campaign_params #stop forgetting columns man!
-    params.require(:campaign).permit(:title, :goal, :completion_date, :fundraising_goal, :how, :end_date, :amount_raised, tag_list: [],  )
+    params.require(:campaign).permit(:title, :goal, :completion_date, :fundraising_goal, :how, :end_date, :photo, :amount_raised, tag_list: [],  )
   end
 
 

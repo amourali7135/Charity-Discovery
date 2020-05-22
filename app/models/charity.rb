@@ -1,6 +1,8 @@
 class Charity < ApplicationRecord
   belongs_to :user
   has_many :campaigns, dependent: :destroy
+  has_one_attached :photo
+
 
 
   validates :name, uniqueness: true

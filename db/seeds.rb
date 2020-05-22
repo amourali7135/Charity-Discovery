@@ -37,6 +37,7 @@ puts 'Creating 20 fake users/charities...'
     instagram:  Faker::Internet.domain_name,
     facebook:  Faker::Internet.domain_name,
     website:  Faker::Internet.domain_name,
+    # photo: Faker::Avatar.image,
     # tag_list: Inquiry.tags.sample(3),
   )
   charity.user = user
@@ -52,6 +53,7 @@ puts 'Creating 20 fake users/charities...'
       fundraising_goal: Faker::Number.between(from: 1, to: 100000),
       amount_raised: Faker::Number.between(from: 0, to: 25000),
       end_date: Faker::Date.forward(days: 30),
+      # photo: Faker::Avatar.image,
       # tag_list: Inquiry.tags.sample(3),
       charity: charity
     )

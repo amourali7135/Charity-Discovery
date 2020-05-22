@@ -53,6 +53,6 @@ class CharitiesController < ApplicationController
   # end
 
   def charity_params #stop forgetting columns man!
-    params.require(:charity).permit(:name, :aged, :instagram, :facebook, :website, :city, :country, :income, :country_focus, :size, :program_percentage, :cost_to_100, :fiveohone, :phone, :email, :mission, :goal, :age, :issues, tag_list: [],  )
+    params.require(:charity).permit(:name, :aged, :instagram, :photo, :facebook, :website, :city, :country, :income, :country_focus, :size, :program_percentage, :cost_to_100, :fiveohone, :phone, :email, :mission, :goal, :age, :issues, tag_list: [],  )
   end
 end
