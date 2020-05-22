@@ -31,7 +31,8 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)
-      flash[:notice] = "Your campaign was successfully updated!"
+      # flash[:notice] = "Your campaign was successfully updated!"
+      flash[:success] = "Your campaign was successfully updated!"
       redirect_to dashboard_path
     else
       flash[:error] = "There was an error, please try again!"

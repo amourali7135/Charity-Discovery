@@ -55,6 +55,7 @@ group :development, :test do  gem 'pry-byebug'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors' #Don't use with RSPEC.  Wait, why not?
   gem 'binding_of_caller' #REPL for better errors.
+  gem 'dotenv-rails'
 end
 
 group :development do

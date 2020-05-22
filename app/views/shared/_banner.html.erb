@@ -6,8 +6,8 @@
       <%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %>
       <% elsif current_user %>
       <strong><h1>Welcome back!  Browse through new charity campaigns or head to your dashboard</h1></strong>
-      <%= link_to "Inquiries", inquiries_path, class: 'btn btn-primary' %>
-      <%= link_to "Dashboard", sellerdashboard_path, class: 'btn btn-primary' %>
+      <%= link_to "Campaigns", campaigns_index_path, class: 'btn btn-primary' %>
+      <%= link_to "Dashboard", dashboard_path, class: 'btn btn-primary' %>
       <% elsif current_user %>
       <strong><h1>Welcome back!  Post a new inquiry or head to your dashboard</h1></strong>
       <%= link_to "New Inquiry", new_buyer_inquiry_path(current_user.buyer), class: 'btn btn-primary' %>
