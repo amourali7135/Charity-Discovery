@@ -1,8 +1,6 @@
 require 'faker'
 require "open-uri"
 
-file = URI.open('https://banner2.cleanpng.com/20180415/zyq/kisspng-charitable-organization-charity-foundation-donatio-hands-5ad3e1b1952f06.5770418815238353136111.jpg')
-
 # clever
 # urls = [1, 2, 3, etc.]
 # urls.each do |url|
@@ -22,6 +20,7 @@ issues = ["Poverty", "Housing", "Social Justice", "Food", "LGBQT", "Children", "
 
 puts 'Creating 20 fake users/charities...'
 20.times do
+  file = URI.open('http://www.pngmart.com/files/11/Charity-PNG-Image.png')  #this must be put here!  Not a global variable!
   user = User.new(
     email: Faker::Internet.unique.email,
     # username: Faker::Alphanumeric.alpha(number: 10),
@@ -52,12 +51,13 @@ puts 'Creating 20 fake users/charities...'
     # photo: Faker::Avatar.image,
     # tag_list: Inquiry.tags.sample(3),
   )
-  charity.photo.attach(io: file, filename: 'charity.jpg', content_type: 'image/jpg')
+  charity.photo.attach(io: file, filename: 'Charity-PNG-Image.png', content_type: 'image/png')
   charity.user = user
   charity.save!
 
   puts 'Creating 40 fake campaigns...'
   2.times do
+    file = URI.open('http://www.pngmart.com/files/10/Gold-Dollar-Sign-Transparent-PNG.png')
     campaign = Campaign.new(
       title: Faker::Lorem.sentences(number: 1),
       goal: Faker::Quote.most_interesting_man_in_the_world,
@@ -71,6 +71,7 @@ puts 'Creating 20 fake users/charities...'
       charity: charity
       # campaign.photo.attach(io: file, filename: 'charity.png', content_type: 'charity/png')
     )
+    campaign.photo.attach(io: file, filename: 'Gold-Dollar-Sign-Transparent-PNG.png', content_type: 'image/png')
     campaign.save!
   end
   puts 'Finished!'
