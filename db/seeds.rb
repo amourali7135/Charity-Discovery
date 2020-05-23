@@ -1,4 +1,16 @@
 require 'faker'
+require "open-uri"
+
+file = URI.open('https://banner2.cleanpng.com/20180415/zyq/kisspng-charitable-organization-charity-foundation-donatio-hands-5ad3e1b1952f06.5770418815238353136111.jpg')
+
+# clever
+# urls = [1, 2, 3, etc.]
+# urls.each do |url|
+#   uri = URI.open(url)
+#   model = Model.new(attributes...)
+#   model.photo.attach(io: uri, filename: "whatever.png", content_type: 'image/png')
+# end
+
 #I had to nest it according to Rayhan because of ID issues.
 puts "Destroy everything"
 Charity.destroy_all
@@ -40,6 +52,7 @@ puts 'Creating 20 fake users/charities...'
     # photo: Faker::Avatar.image,
     # tag_list: Inquiry.tags.sample(3),
   )
+  charity.photo.attach(io: file, filename: 'charity.jpg', content_type: 'image/jpg')
   charity.user = user
   charity.save!
 
@@ -56,6 +69,7 @@ puts 'Creating 20 fake users/charities...'
       # photo: Faker::Avatar.image,
       # tag_list: Inquiry.tags.sample(3),
       charity: charity
+      # campaign.photo.attach(io: file, filename: 'charity.png', content_type: 'charity/png')
     )
     campaign.save!
   end
